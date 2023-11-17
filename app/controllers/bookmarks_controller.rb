@@ -17,15 +17,12 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @bookmark = bookmark.find(params[:id])
+    @bookmark = Bookmark.find(params[:id])
     #@bookmark.destroy
     # No need for app/views/bookmarks/destroy.html.erb
     #redirect_to bookmarks_path, status: :see_other
-    if @bookmark.save
-      redirect_to bookmark_path(@bookmark)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @bookmark.destroy
+    redirect_to bookmark_path
   end
 
   private

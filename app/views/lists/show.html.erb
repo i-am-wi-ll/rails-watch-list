@@ -10,6 +10,13 @@
     <li class="list-group-item">
       <%= bookmark.comment %> - <%= bookmark.movie.title %>
     </li>
+
+    <%= link_to "Delete",
+      bookmark_path(bookmark),
+      data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      }, class: 'btn btn-danger' %>
   <% end %>
 </ul>
 <br>
