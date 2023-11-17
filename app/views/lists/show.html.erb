@@ -4,6 +4,7 @@
   </div>
 <span class="movie-tag"><%= pluralize(@list.movies.size, "movie") %></span>
 </div>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 
 <p><%= link_to "back to lists", lists_path %></p>
 
